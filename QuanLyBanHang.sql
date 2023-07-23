@@ -586,7 +586,7 @@ WHERE
 -- 20.Cho biết khách hàng có tổng trị giá đơn hàng lớn nhất 
 -- trong 6 tháng đầu năm 2018.
 SELECT 
-    kh.TenKH, SUM(ctpx.GiaBan * ctpx.SoLuong) Tổng Trị Giá
+    kh.TenKH, SUM(ctpx.GiaBan * ctpx.SoLuong) `Tổng Trị Giá`
 FROM
     PhieuXuat px
         JOIN
@@ -597,11 +597,11 @@ WHERE
     YEAR(px.NgayBan) = 2023
         AND MONTH(px.NgayBan) <= 6
 GROUP BY kh.TenKH
-ORDER BY Tổng Trị Giá DESC
+ORDER BY `Tổng Trị Giá` DESC
 LIMIT 1;
 -- 21.Cho biết mã khách hàng và số lượng đơn đặt hàng của mỗi khách hàng.
 SELECT 
-    px.MaKH `Ma KH`, COUNT(px.SoPX) SL đơn
+    px.MaKH `Ma KH`, COUNT(px.SoPX) `SL đơn`
 FROM
     PhieuXuat px
 GROUP BY px.MaKH;
